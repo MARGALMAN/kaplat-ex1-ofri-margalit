@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+double power(double base, int exponent) {
+    double result = 1.0;
+    
+    if (exponent < 0) {
+        base = 1.0 / base;
+        exponent = -exponent;
+    }
+    
+    for (int i = 0; i < exponent; i++) {
+        result *= base;
+    }
+    
+    return result;
+}
+
+int main() {
+    printf("2^3 = %f\n", power(2, 3));
+    printf("5^2 = %f\n", power(5, 2));
+    printf("2^-3 = %f\n", power(2, -3));
+    return 0;
+}
